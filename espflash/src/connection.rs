@@ -93,7 +93,7 @@ impl Connection {
             self.serial.write_data_terminal_ready(true)?;
             self.serial.write_request_to_send(false)?;
 
-            let millis = if extra_delay { 500 } else { 50 };
+            let millis = if extra_delay { 5000 } else { 50 };
             sleep(Duration::from_millis(millis));
 
             self.serial.write_data_terminal_ready(false)?;
